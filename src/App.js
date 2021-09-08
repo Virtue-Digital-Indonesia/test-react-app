@@ -39,6 +39,10 @@ function App() {
     setImageSource(output)
   }
 
+  const onExportButtonIsClicked = (inputNumber) => {
+    console.log(inputNumber)
+  }
+
   useEffect(() => {
     generateImageList(textList)
   }, [])
@@ -53,7 +57,10 @@ function App() {
       </div>
 
       {/* EXPORT BUTTON */}
-      <div className='export-button'>
+      <div
+        className='export-button'
+        onClick={() => onExportButtonIsClicked(1)}
+      >
         Export
       </div>
 
@@ -73,7 +80,10 @@ function App() {
       </div>
 
       {/* EXPORT BUTTON */}
-      <div className='export-button'>
+      <div
+        className='export-button'
+        onClick={() => onExportButtonIsClicked(2)}
+      >
         Export
       </div>
 
@@ -92,7 +102,10 @@ function App() {
       </div>
 
       {/* EXPORT BUTTON */}
-      <div className='export-button'>
+      <div
+        className='export-button'
+        onClick={() => onExportButtonIsClicked(3)}
+      >
         Export
       </div>
 
@@ -123,7 +136,10 @@ function App() {
       </div>
 
       {/* EXPORT BUTTON */}
-      <div className='export-button'>
+      <div
+        className='export-button'
+        onClick={() => onExportButtonIsClicked(4)}
+      >
         Export
       </div>
     </div>
