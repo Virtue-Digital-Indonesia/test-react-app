@@ -1,16 +1,11 @@
 .root {
   
-  .odd-section {
+  .section {
     padding: 20px;
     background-color: lavender;
   }
 
-  .even-section {
-    padding: 20px;
-    background-color: #ccccff;
-  }
-
-  .flex-section {
+  .flex {
     display: flex;
     justify-content: space-between;
   }

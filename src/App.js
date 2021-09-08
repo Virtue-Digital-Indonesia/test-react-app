@@ -47,7 +47,7 @@ function App() {
     <div className='root'>
 
       {/* FIRST SECTION */}
-      <div className='odd-section'>
+      <div className='section'>
         {imageSourceList && <img src={imageSourceList[0]} alt=''/>}
         <p>{`Text: "${textList[0]}"`}</p>
       </div>
@@ -58,7 +58,7 @@ function App() {
       </div>
 
       {/* SECOND SECTION */}
-      <div className='even-section flex-section'>
+      <div className='section flex'>
         {/* FIRST ITEM */}
         {imageSourceList && imageSourceList.map((item, index) => {
           if(index === 1 || index === 2) {
@@ -78,7 +78,7 @@ function App() {
       </div>
 
       {/* THIRD SECTION */}
-      <div className='odd-section flex-section'>
+      <div className='section flex'>
         {imageSourceList && imageSourceList.map((item, index) => {
           if(index > 2) {
             return(
@@ -97,7 +97,7 @@ function App() {
       </div>
 
       {/* FORTH SECTION */}
-      <div className='odd-section flex-section'>
+      <div className='section flex'>
         {imageSourceList && imageSourceList.map((item, index) => {
           if(index >= 0 && index <= 3) {
             return(
@@ -109,7 +109,7 @@ function App() {
           }
         })}
       </div>
-      <div className='odd-section flex-section'>
+      <div className='section flex'>
         {imageSourceList && imageSourceList.map((item, index) => {
           if(index >= 4 && index <= 6) {
             return(
