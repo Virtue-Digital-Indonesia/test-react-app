@@ -72,6 +72,23 @@ function App() {
           }
         })}
       </div>
+
+      {/* THIRD SECTION */}
+      <div className='odd-section second-section'>
+        {imageSourceList && imageSourceList.map((item, index) => {
+          if(index > 2) {
+            return(
+              <div>
+                <img src={item} alt=''/>
+                <p>{`Text: "${textList[index]}"`}</p>
+              </div>
+            )
+          }
+        })}
+      </div>
+      <div className='export-button'>
+        Export
+      </div>
     </div>
   )
 }
