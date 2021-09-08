@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
+// PDF PRINT
+import ReactToPrint from 'react-to-print'
+
+// QR CODE
 import QRCode from 'qrcode'
 
 // STYLES
@@ -7,6 +11,11 @@ import './App.scss'
 
 function App() {
   const [ imageSourceList, setImageSource ] = useState(null)
+
+  const firstSectionRef = useRef()
+  const secondSectionRef = useRef()
+  const thirdSectionRef = useRef()
+  const forthSectionRef = useRef()
 
   const textList = [
     // FIRST SECTION
@@ -39,10 +48,6 @@ function App() {
     setImageSource(output)
   }
 
-  const onExportButtonIsClicked = (inputNumber) => {
-    console.log(inputNumber)
-  }
-
   useEffect(() => {
     generateImageList(textList)
   }, [])
@@ -51,21 +56,29 @@ function App() {
     <div className='root'>
 
       {/* FIRST SECTION */}
-      <div className='section'>
+      <div
+        className='section'
+        ref={firstSectionRef}
+      >
         {imageSourceList && <img src={imageSourceList[0]} alt=''/>}
         <p>{`Text: "${textList[0]}"`}</p>
       </div>
 
       {/* EXPORT BUTTON */}
-      <div
-        className='export-button'
-        onClick={() => onExportButtonIsClicked(1)}
-      >
-        Export
-      </div>
+      <ReactToPrint
+        trigger={() =>
+          <div className='export-button'>
+            Export
+          </div>
+        }
+        content={() => firstSectionRef.current}
+      />
 
       {/* SECOND SECTION */}
-      <div className='section flex'>
+      <div 
+        className='section flex'
+        ref={secondSectionRef}
+      >
         {/* FIRST ITEM */}
         {imageSourceList && imageSourceList.map((item, index) => {
           if(index === 1 || index === 2) {
@@ -80,15 +93,20 @@ function App() {
       </div>
 
       {/* EXPORT BUTTON */}
-      <div
-        className='export-button'
-        onClick={() => onExportButtonIsClicked(2)}
-      >
-        Export
-      </div>
+      <ReactToPrint
+        trigger={() =>
+          <div className='export-button'>
+            Export
+          </div>
+        }
+        content={() => secondSectionRef.current}
+      />
 
       {/* THIRD SECTION */}
-      <div className='section flex'>
+      <div 
+        className='section flex'
+        ref={thirdSectionRef}
+      >
         {imageSourceList && imageSourceList.map((item, index) => {
           if(index > 2) {
             return(
@@ -102,15 +120,20 @@ function App() {
       </div>
 
       {/* EXPORT BUTTON */}
-      <div
-        className='export-button'
-        onClick={() => onExportButtonIsClicked(3)}
-      >
-        Export
-      </div>
+      <ReactToPrint
+        trigger={() =>
+          <div className='export-button'>
+            Export
+          </div>
+        }
+        content={() => thirdSectionRef.current}
+      />
 
       {/* FORTH SECTION */}
-      <div className='section flex'>
+      <div 
+        className='section flex'
+        ref={forthSectionRef}
+      >
         {imageSourceList && imageSourceList.map((item, index) => {
           if(index >= 0 && index <= 3) {
             return(
@@ -136,12 +159,14 @@ function App() {
       </div>
 
       {/* EXPORT BUTTON */}
-      <div
-        className='export-button'
-        onClick={() => onExportButtonIsClicked(4)}
-      >
-        Export
-      </div>
+      <ReactToPrint
+        trigger={() =>
+          <div className='export-button'>
+            Export
+          </div>
+        }
+        content={() => forthSectionRef.current}
+      />
     </div>
   )
 }
