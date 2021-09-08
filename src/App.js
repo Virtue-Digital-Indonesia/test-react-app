@@ -58,7 +58,7 @@ function App() {
       </div>
 
       {/* SECOND SECTION */}
-      <div className='even-section second-section'>
+      <div className='even-section flex-section'>
         {/* FIRST ITEM */}
         {imageSourceList && imageSourceList.map((item, index) => {
           if(index === 1 || index === 2) {
@@ -78,9 +78,40 @@ function App() {
       </div>
 
       {/* THIRD SECTION */}
-      <div className='odd-section second-section'>
+      <div className='odd-section flex-section'>
         {imageSourceList && imageSourceList.map((item, index) => {
           if(index > 2) {
+            return(
+              <div>
+                <img src={item} alt=''/>
+                <p>{`Text: "${textList[index]}"`}</p>
+              </div>
+            )
+          }
+        })}
+      </div>
+
+      {/* EXPORT BUTTON */}
+      <div className='export-button'>
+        Export
+      </div>
+
+      {/* FORTH SECTION */}
+      <div className='odd-section flex-section'>
+        {imageSourceList && imageSourceList.map((item, index) => {
+          if(index >= 0 && index <= 3) {
+            return(
+              <div>
+                <img src={item} alt=''/>
+                <p>{`Text: "${textList[index]}"`}</p>
+              </div>
+            )
+          }
+        })}
+      </div>
+      <div className='odd-section flex-section'>
+        {imageSourceList && imageSourceList.map((item, index) => {
+          if(index >= 4 && index <= 6) {
             return(
               <div>
                 <img src={item} alt=''/>
