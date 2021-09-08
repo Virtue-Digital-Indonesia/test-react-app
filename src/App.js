@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+
+import QRCode from 'qrcode'
 
 function App() {
+  const [ imageSource, setImageSource ] = useState(null)
+
+  const text = 'hello world!'
+
+  QRCode.toDataURL(text)
+  .then(url => {
+    console.log(url)
+    setImageSource(url)
+  })
+  .catch(err => {
+    console.error(err)
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        {imageSource && <img src={imageSource} alt=''/>}
+      </div>
+      {text}
     </div>
-  );
+  )
 }
 
 export default App;
