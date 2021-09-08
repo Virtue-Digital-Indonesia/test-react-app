@@ -63,7 +63,7 @@ function App() {
         {imageSourceList && imageSourceList.map((item, index) => {
           if(index === 1 || index === 2) {
             return(
-              <div>
+              <div key={index}>
                 <img src={item} alt=''/>
                 <p>{`Text: "${textList[index]}"`}</p>
               </div>
@@ -82,7 +82,7 @@ function App() {
         {imageSourceList && imageSourceList.map((item, index) => {
           if(index > 2) {
             return(
-              <div>
+              <div key={index}>
                 <img src={item} alt=''/>
                 <p>{`Text: "${textList[index]}"`}</p>
               </div>
@@ -101,7 +101,7 @@ function App() {
         {imageSourceList && imageSourceList.map((item, index) => {
           if(index >= 0 && index <= 3) {
             return(
-              <div>
+              <div key={index}>
                 <img src={item} alt=''/>
                 <p>{`Text: "${textList[index]}"`}</p>
               </div>
@@ -113,7 +113,7 @@ function App() {
         {imageSourceList && imageSourceList.map((item, index) => {
           if(index >= 4 && index <= 6) {
             return(
-              <div>
+              <div key={index}>
                 <img src={item} alt=''/>
                 <p>{`Text: "${textList[index]}"`}</p>
               </div>
