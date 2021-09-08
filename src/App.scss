@@ -1,6 +1,19 @@
 .root {
-  padding: 20px;
-  background-color: lavender;
+  
+  .odd-section {
+    padding: 20px;
+    background-color: lavender;
+  }
+
+  .even-section {
+    padding: 20px;
+    background-color: #ccccff;
+  }
+
+  .second-section {
+    display: flex;
+    justify-content: space-between;
+  }
 
   .export-button {
     width: fit-content;

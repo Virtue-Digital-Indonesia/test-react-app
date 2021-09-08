@@ -9,11 +9,11 @@ function App() {
   const [ imageSourceList, setImageSource ] = useState(null)
 
   const textList = [
-    // FIRST EXPORT
+    // FIRST SECTION
     'Hello world 0',
-    // SECOND EXPORT
+    // SECOND SECTION
     'Hello world 1', 'Hello world 2',
-    // THIRD EXPORT
+    // THIRD SECTION
     'Hello world 3', 'Hello world 4',
     'Hello world 5', 'Hello world 6',
   ]
@@ -45,12 +45,32 @@ function App() {
 
   return (
     <div className='root'>
-      <div>
+
+      {/* FIRST SECTION */}
+      <div className='odd-section'>
         {imageSourceList && <img src={imageSourceList[0]} alt=''/>}
-        <p>{textList[0]}</p>
+        <p>{`Text: "${textList[0]}"`}</p>
         <div className='export-button'>
           Export
         </div>
+      </div>
+
+      {/* SECOND SECTION */}
+      <div className='even-section second-section'>
+        {/* FIRST ITEM */}
+        {imageSourceList && imageSourceList.map((item, index) => {
+          if(index === 1 || index === 2) {
+            return(
+              <div>
+                <img src={item} alt=''/>
+                <p>{`Text: "${textList[index]}"`}</p>
+                <div className='export-button'>
+                  Export
+                </div>
+              </div>
+            )
+          }
+        })}
       </div>
     </div>
   )
