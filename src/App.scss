@@ -1,0 +1,12 @@
+.root {
+  padding: 20px;
+  background-color: lavender;
+
+  .export-button {
+    width: fit-content;
+    background-color: gainsboro;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
