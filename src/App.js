@@ -50,9 +50,11 @@ function App() {
       <div className='odd-section'>
         {imageSourceList && <img src={imageSourceList[0]} alt=''/>}
         <p>{`Text: "${textList[0]}"`}</p>
-        <div className='export-button'>
-          Export
-        </div>
+      </div>
+
+      {/* EXPORT BUTTON */}
+      <div className='export-button'>
+        Export
       </div>
 
       {/* SECOND SECTION */}
@@ -64,13 +66,15 @@ function App() {
               <div>
                 <img src={item} alt=''/>
                 <p>{`Text: "${textList[index]}"`}</p>
-                <div className='export-button'>
-                  Export
-                </div>
               </div>
             )
           }
         })}
+      </div>
+
+      {/* EXPORT BUTTON */}
+      <div className='export-button'>
+        Export
       </div>
 
       {/* THIRD SECTION */}
@@ -86,6 +90,8 @@ function App() {
           }
         })}
       </div>
+
+      {/* EXPORT BUTTON */}
       <div className='export-button'>
         Export
       </div>
