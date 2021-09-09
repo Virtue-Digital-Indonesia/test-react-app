@@ -20,7 +20,7 @@ function App() {
 
   const textList = [
     // FIRST SECTION
-    'Hello world 0',
+    '351756051523999-085123456789',
     // SECOND SECTION
     'Hello world 1', 'Hello world 2',
     // THIRD SECTION
