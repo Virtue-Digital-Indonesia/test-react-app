@@ -16,6 +16,7 @@ function App() {
   const secondSectionRef = useRef()
   const thirdSectionRef = useRef()
   const forthSectionRef = useRef()
+  const fifthSectionRef = useRef()
 
   const textList = [
     // FIRST SECTION
@@ -166,6 +167,31 @@ function App() {
           </div>
         }
         content={() => forthSectionRef.current}
+      />
+
+      {/* FIFTH SECTION */}
+      <div
+        className='section'
+        ref={fifthSectionRef}
+      >
+        {imageSourceList && 
+        <img 
+          src={imageSourceList[0]} 
+          alt=''
+          className='small'
+        />
+        }
+        <p>{`Text: "${textList[0]}"`}</p>
+      </div>
+
+      {/* EXPORT BUTTON */}
+      <ReactToPrint
+        trigger={() =>
+          <div className='export-button'>
+            Export
+          </div>
+        }
+        content={() => fifthSectionRef.current}
       />
     </div>
   )

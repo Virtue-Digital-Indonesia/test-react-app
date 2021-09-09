@@ -1,13 +1,18 @@
 .root {
-  
+
   .section {
     padding: 20px;
     background-color: lavender;
   }
-
+  
   .flex {
     display: flex;
     justify-content: space-between;
+  }
+  
+  .small {
+    height: 1cm;
+    width: 1cm;
   }
 
   .export-button {
