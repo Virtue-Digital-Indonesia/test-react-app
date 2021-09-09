@@ -131,32 +131,31 @@ function App() {
       />
 
       {/* FORTH SECTION */}
-      <div 
-        className='section flex'
-        ref={forthSectionRef}
-      >
-        {imageSourceList && imageSourceList.map((item, index) => {
-          if(index >= 0 && index <= 3) {
-            return(
-              <div key={index}>
-                <img src={item} alt=''/>
-                <p>{`Text: "${textList[index]}"`}</p>
-              </div>
-            )
-          }
-        })}
-      </div>
-      <div className='section flex'>
-        {imageSourceList && imageSourceList.map((item, index) => {
-          if(index >= 4 && index <= 6) {
-            return(
-              <div key={index}>
-                <img src={item} alt=''/>
-                <p>{`Text: "${textList[index]}"`}</p>
-              </div>
-            )
-          }
-        })}
+      <div ref={forthSectionRef}>
+        <div className='section flex'>
+          {imageSourceList && imageSourceList.map((item, index) => {
+            if(index >= 0 && index <= 3) {
+              return(
+                <div key={index}>
+                  <img src={item} alt=''/>
+                  <p>{`Text: "${textList[index]}"`}</p>
+                </div>
+              )
+            }
+          })}
+        </div>
+        <div className='section flex'>
+          {imageSourceList && imageSourceList.map((item, index) => {
+            if(index >= 4 && index <= 6) {
+              return(
+                <div key={index}>
+                  <img src={item} alt=''/>
+                  <p>{`Text: "${textList[index]}"`}</p>
+                </div>
+              )
+            }
+          })}
+        </div>
       </div>
 
       {/* EXPORT BUTTON */}
