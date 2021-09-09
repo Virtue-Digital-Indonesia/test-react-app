@@ -54,7 +54,7 @@ function App() {
   }, [])
 
   return (
-    <div className='root'>
+    <div className='parent-element'>
 
       {/* FIRST SECTION */}
       <div
