@@ -1,28 +1,27 @@
 .parent-element {
-
   background-color: turquoise;
+}
 
-  .section {
-    padding: 20px;
-    background-color: lavender;
-  }
-  
-  .flex {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .small {
-    height: 1cm;
-    width: 1cm;
-  }
+.section {
+  padding: 20px;
+  background-color: lavender;
+}
 
-  .export-button {
-    width: fit-content;
-    background-color: gainsboro;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 20px;
-  }
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small {
+  height: 1cm;
+  width: 1cm;
+}
+
+.export-button {
+  width: fit-content;
+  background-color: gainsboro;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 20px;
 }
